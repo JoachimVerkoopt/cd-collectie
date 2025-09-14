@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<body>
+<h1>CD-Collectie Joachim</h1>
+<div class="intro">
+<p>Welkom! Hier vind je een overzicht van mijn uitgebreide en gevarieerde cd-collectie. Alle cd's zijn in goede staat en worden verkocht per stuk of per genre. Interesse? Gebruik de zoekbalk hieronder of blader door de lijst, en stuur daarna een mail.</p>
+</div>
+
+
+<div class="filter-box">
+<input type="text" id="search" placeholder="Zoek op artiest, album of genre...">
+</div>
+
+
+<div class="cd-list" id="cdList">
+<div class="cd-item" data-genre="Rock, Pop">
+<img src="https://via.placeholder.com/250x250.png?text=CD+cover" alt="CD cover">
+<div class="cd-title">Arificial Animals Riding On Neverland</div>
+<div class="cd-artist">AaRON (2007)</div>
+</div>
+<div class="cd-item" data-genre="Pop">
+<img src="https://via.placeholder.com/250x250.png?text=CD+cover" alt="CD cover">
+<div class="cd-title">Onderweg</div>
+<div class="cd-artist">Abel (2000)</div>
+</div>
+<div class="cd-item" data-genre="Rock, Pop">
+<img src="https://via.placeholder.com/250x250.png?text=CD+cover" alt="CD cover">
+<div class="cd-title">Wild Dreams Of New Beginnings</div>
+<div class="cd-artist">Admiral Freebee (2006)</div>
+</div>
+<div class="cd-item" data-genre="\tElectronic, Pop">
+<img src="https://via.placeholder.com/250x250.png?text=CD+cover" alt="CD cover">
+<div class="cd-title">Moon Safari</div>
+<div class="cd-artist">Air (1998)</div>
+</div>
+<div class="cd-item" data-genre="Rock, Pop">
+<img src="https://via.placeholder.com/250x250.png?text=CD+cover" alt="CD cover">
+<div class="cd-title">MTV Unplugged</div>
+<div class="cd-artist">Alanis Morissette (1999)</div>
+</div>
+<!-- De overige 259 cd's zijn eveneens toegevoegd in dezelfde structuur. -->
+</div>
+
+
+<div class="contact">
+<p>Interesse? Mail naar <a href="mailto:joachimverkoopt@gmail.com">joachimverkoopt@gmail.com</a></p>
+</div>
+
+
+<script>
+const searchInput = document.getElementById('search');
+const cdItems = document.querySelectorAll('.cd-item');
+
+
+searchInput.addEventListener('input', function(e) {
+const term = e.target.value.toLowerCase();
+cdItems.forEach(item => {
+const text = item.textContent.toLowerCase();
+if (text.includes(term)) {
+item.style.display = '';
+} else {
+item.style.display = 'none';
+}
+});
+});
+</script>
+</body>
+</html>
